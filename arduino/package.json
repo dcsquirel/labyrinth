@@ -1,0 +1,17 @@
+{
+  "name": "acelleroprovider",
+  "version": "1.0.0",
+  "main": "arduino.js",
+  "dependencies": {
+    "express": "^4.16.4",
+    "mqtt": "^2.18.8",
+    "serialport": "^7.1.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

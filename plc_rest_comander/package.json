@@ -1,0 +1,20 @@
+{
+  "name": "plc_rest_comander",
+  "version": "1.0.0",
+  "description": "rest api plc",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "plc",
+    "rest"
+  ],
+  "author": "daan",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "mqtt": "^2.18.8"
+  }
+}
