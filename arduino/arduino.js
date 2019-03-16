@@ -8,6 +8,10 @@ portusb.on("open", () => {
 });
 parser.on('data', data =>{
   console.log('got word from arduino:', data);
+  if(data.toString().indexOf('Gyro') === -1) {
+    let values = data.split(',')
+    client.publish('test/plc/drive',  JSON.stringify( {x: parseInt(values[0] *2.00 ), y: parseInt(values[1] * 2.00)} ))
+  }
 });
 
 
@@ -19,11 +23,13 @@ const port = 3000
 
 var mqtt = require('mqtt')
 var client  = mqtt.connect('mqtt://mqtt.labict.be')
-
+var dataParsed = Readline.toString();
 var bodyParser = require('body-parser');
 app.use(bodyParser.json()); 
 app.use(bodyParser.urlencoded({ extended: true }));
-client.publish('test/plc/drive', 'dikke test' )
+
+
+
 app.post('/api/control', function(req, res) {
 
     // console.log(req.body)
@@ -32,7 +38,7 @@ app.post('/api/control', function(req, res) {
     // var datastring = JSON.stringify(req.body);
 
     // client.publish('test/plc/drive', datastring )
-    client.publish('test/plc/drive', 'dikke test' )
+   
 
 
 });
